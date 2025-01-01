@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Lola Portfolio Website</title>
+<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+* {box-sizing: border-box;}
+
+:root {
+    --text-color: white;
+    --background-color: #304870;
+    --navbar-a-color: white;
+    --navbar-background-color:  #304870;
+    --tag-cloud-background-color: #fff;
+    --tag-cloud-text-color: #212121;
+    --down-arrow: url("icons_and_such\icons8-chevron-down-white.png");
+    --grad1: #1b283e24;
+    --grad2: #20304d1e;
+}
+
+.light-mode {
+    --text-color: #253450;
+    --background-color: white;
+    --navbar-a-color: #304870;
+    --navbar-background-color: white;
+    --tag-cloud-background-color: #304870;
+    --tag-cloud-text-color: white;
+    --down-arrow: url("icons_and_such\icons8-chevron-down-black.png");
+    --grad1: #ffffff2a;
+    --grad2: #ffffff3e;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: #304870;
+  background: #D4E9FF;
+}
+
+::selection {
+  color: #304870;
+  background: #D4E9FF;
+}
+
+html {scroll-behavior: smooth;}
+
+
+body {
+  font-family: 'Abel';font-size: 22px;
+  margin:0;
+  padding-top: 40px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Increase the font size of the h1 element */
+h1 {font-size: 40px; padding: 20px 50px 20px 50px;} 
+
+h2 {padding: 10px 50px 0px 50px; text-align: center;} 
+
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top:0; left: 0; width: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--navbar-background-color);
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: var(--navbar-a-color);
+}
+
+/* Right-aligned link */
+.navbar .links {
+  position: absolute;
+  right: 0;
+  padding-right: 20px;
+}
+
+/* Right-aligned link */
+.navbar .left {
+  position: absolute;
+  left: 0;
+  padding-left: 20px;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #D4E9FF;
+  color: black;
+}
+
+.main {
+  padding: 0px 50px;
+  width: 100%;
+}
+
+/* Column container */
+.row {
+    display: flex; 
+    flex-wrap: wrap; 
+    padding: 0px 80px 0px 80px
+}
+
+
+/* ABOUT ME STYLE */
+.maincol {   
+  padding: 100px 150px 70px 150px;
+  margin-top: 150px;
+  margin-bottom: 80px;
+  background-image: linear-gradient(var(--grad1), var(--grad2)), url("Project_photos/ArtemicsFying.png");
+  background-size: 55%; /* Make the background image smaller */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* SKILLS STYLE */
+.tag-cloud {
+  display: inline-block;
+  color: var(--tag-cloud-text-color);
+  padding: 0px 20px 0px;
+  border-radius: 25px;
+  background-color: var(--tag-cloud-background-color);
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  }
+
+/* Create two equal columns that sits next to each other */
+.portfolio_col {
+  flex: 30%;
+  text-align: center;
+  padding: 10px 20px 10px 20px;
+}
+
+/* FADE IN */
+.container {position: relative; width: 100%; padding-bottom: 20px;}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container:hover .image {opacity: 0.3;}
+
+.container:hover .middle {opacity: .8;}
+
+.text {
+  background-color: #304870;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}
+
+</style>
+</head>
+<body>
+  
+   <!-- STICKY NAV BAR SECTION -->
+  <div class="navbar" id="nav">
+    <div class="left">
+      <img src="icons_and_such/icons8-light-mode-78.png" 
+      alt="Toggle" class="toggle-button" onclick="toggleLightMode()" 
+      id="toggle" style="width: 45px;">
+    </div>
+    <a href="#" style="font-size:30px; font-weight:bold;">Lola Anderson</a>
+    <div class="links" id="nav-a">
+      <a href="websitev3.htm" id="nav-a">Home</a>
+      <a href="#Projects">Projects</a>
+      <a href="#Skills">Skills</a>
+      <a href="#Resume">Resume</a>
+    </div>
+  </div>
+
+    <!-- ABOUT ME SECTION -->
+    <div class="maincol">
+      <p style="font-size:30px; font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(71, 82, 136, 0.8);" id="abt">
+        I am a student in my Senior year at Cornell University, 
+        starting my career in Mechanical Engineering. Past internships 
+        include Caterpillar, where I got to help extend diesel engine 
+        lifecycles, and SpaceX where designed many parts for Falcon 9 
+        Payload Integration. While at Cornell, I am a member of CUAir, 
+        a project team where I was a member of Integration and Testing 
+        Operations subteam. I hope you enjoy checking out some of the projects 
+        I have worked on and some of my other interests!
+      </p>
+    </div>
+
+  <div class="main" id="content">
+      <!-- SKILLS SECTION -->
+      <h2 id="Skills">SKILLS</h2>
+      <p style="text-align: center;">
+      <span class="tag-cloud">NX</span>
+      <span class="tag-cloud">Solidworks</span>
+      <span class="tag-cloud">ANSYS</span>
+      <span class="tag-cloud">NASTRAN</span>
+      <span class="tag-cloud">Matlab</span>
+      <span class="tag-cloud">Python</span></p>
+
+      <!-- NEXT BUTTON -->
+      <a href="#Projects">
+        <p style="text-align: center;">
+            <img src="icons_and_such\icons8-chevron-down-white.png" alt="Resume" size=25px id="next">
+        </p>
+      </a>
+    </div>
+  <!-- PROJECTS SECTION -->
+<div class="main" id="Projects">
+  <h2>PROJECTS</h2>
+  <hr class="w3-opacity"/>
+
+<!-- COLUMN 1 -->
+  <div class="row">
+    <div class="portfolio_col">
+      <a href="gimbal.htm">
+        <div class="container">
+          <img src="Project_photos\camtracker.jpg" alt="Avatar" class="image">
+          <div class="middle">
+            <div class="text">2.5 Axis Gimbal</div>
+          </div>
+        </div>
+      </a>
+      
+      <a href="gimbal.htm">
+        <div class="container">
+          <img src="Project_photos\IDGIMBALMODEL.jpg" alt="Avatar" class="image">
+          <div class="middle">
+            <div class="text">Dynamic Simulation of Free Gimbal</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  
+<!-- COLUMN 2 -->
+    <div class="portfolio_col">
+      <a href="https://www.w3schools.com">
+        <div class="container">
+          <img src="Project_photos\FEAWINGDES.jpg" alt="Avatar" class="image">
+          <div class="middle">
+            <div class="text">Design and Finite Element Analysis of Airplane Wing using Optislang</div>
+          </div>
+        </div>
+      </a>
+      
+      <a href="https://www.w3schools.com">
+        <div class="container">
+          <img src="Project_photos\fusemold2.png" alt="Avatar" class="image">
+          <div class="middle">
+            <div class="text">Design and Manufacturing of VTOL Aircraft Carbon Fiber Fuselage Mold</div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+<!-- COLUMN 3 -->
+    <div class="portfolio_col">
+      <a href="https://www.w3schools.com">
+        <div class="container">
+          <img src="Project_photos\ebay2.jpg" alt="Avatar" class="image">
+          <div class="middle">
+            <div class="text">Custom VTOL Aircraft Electrical Bay</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+<!-- RESUME SECTION -->
+<h2 id="Resume">RESUME</h2>
+  <div style="text-align:center; margin-top:10px;">
+    <a href="Lola_Anderson_Resume_August_2024.pdf" download>
+        <span class="tag-cloud" style= "margin-bottom: 10px">Download Resume</span>
+    </a>
+  </div>
+  <p style="text-align: center;">
+    <img src="resume.jpg" alt="Resume" width=50%>
+  </p>
+  <!--<a href="Lola_Anderson_Resume_August_2024.pdf" download>
+    <img src="/images/myw3schoolsimage.jpg" alt="Resume">
+  </a>
+  <h2 id="Resume">RESUME</h2>
+  <h5>Title description, Sep 2, 2017</h5>
+  <div class="fakeimg" style="height:200px;">Image</div>
+  <p>Some text..</p>
+  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum 
+    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+    exercitation ullamco.</p> -->
+</div>
+
+
+<div class="footer">
+<h2>Footer</h2>
+</div>
+
+<script>
+    function toggleLightMode() {
+      var body = document.body;
+      var next = document.getElementById("next")
+      var tog = document.getElementById("toggle")
+      var abt = document.getElementById("abt")
+      if (body.classList.contains('light-mode')) 
+      { 
+        body.classList.remove('light-mode');
+        next.src="icons_and_such/icons8-chevron-down-white.png";
+        tog.src="icons_and_such/icons8-light-mode-78.png";
+        tog.style="width: 45px;";
+        abt.style="font-size:30px; font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(71, 82, 136, 0.8);";
+
+      } else {
+        body.classList.add('light-mode');
+        next.src="icons_and_such/icons8-chevron-down-black.png";
+        tog.src="icons_and_such/icons8-dark-mode-50.png";
+        tog.style="width: 35px;";
+        abt.style="font-size:30px; font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);";
+      };
+    }
+  </script>
+
+</body>
+</html>
