@@ -4,6 +4,7 @@
 
 <title>Lola Portfolio Website</title>
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -17,9 +18,12 @@
     --navbar-background-color:  #304870;
     --tag-cloud-background-color: #fff;
     --tag-cloud-text-color: #212121;
-    --down-arrow: url("icons_and_such\icons8-chevron-down-white.png");
+    --down-arrow: url("icons_and_such/icons8-chevron-down-white.png");
     --grad1: #1b283e24;
     --grad2: #20304d1e;
+    --about-me-text-size: 3.5vw;
+    --about-me-image: url('project_photos/artemis-flying-vert.jpg');
+    --skills-font-size:40px:
 }
 
 .light-mode {
@@ -29,10 +33,16 @@
     --navbar-background-color: white;
     --tag-cloud-background-color: #304870;
     --tag-cloud-text-color: white;
-    --down-arrow: url("icons_and_such\icons8-chevron-down-black.png");
+    --down-arrow: url("icons_and_such/icons8-chevron-down-black.png");
     --grad1: #ffffff2a;
     --grad2: #ffffff3e;
 }
+.phone-mode {
+  --about-me-text-size: 3.5vw;
+  --about-me-image: url("project_photos/artemis-flying-full.png");
+  --skills-font-size:22px;
+}
+
 
 ::-moz-selection { /* Code for Firefox */
   color: #304870;
@@ -48,57 +58,98 @@ html {scroll-behavior: smooth;}
 
 
 body {
-  font-family: 'Abel';font-size: 22px;
+  font-family: 'Abel';
+  font-size: 22px;
   margin:0;
   padding-top: 40px;
   color: var(--text-color);
   background-color: var(--background-color);
+  justify-items: center;
 }
 
 /* Increase the font size of the h1 element */
-h1 {font-size: 40px; padding: 20px 50px 20px 50px;} 
+h1 {padding: 20px 50px 20px 50px;} 
 
-h2 {padding: 10px 50px 0px 50px; text-align: center;} 
+h2 {padding: 10px 50px 0px 50px; text-align: center; font-size: var(--skills-font-size);} 
 
 
 /* Style the top navigation bar */
-.navbar {
+.topnav {
   overflow: hidden;
+  background-color: var(--navbar-background-color);
   position: fixed; /* Set the navbar to fixed position */
   top:0; left: 0; width: 100%;
   z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--navbar-background-color);
 }
 
-/* Style the navigation bar links */
-.navbar a {
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
+.topnav a {
+  float: right;
+  display: block;
   color: var(--navbar-a-color);
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-/* Right-aligned link */
-.navbar .links {
-  position: absolute;
-  right: 0;
-  padding-right: 20px;
-}
-
-/* Right-aligned link */
-.navbar .left {
+.topnav .left {
   position: absolute;
   left: 0;
   padding-left: 20px;
 }
 
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #D4E9FF;
+.topnav .center {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
   color: black;
+}
+
+.topnav a.active {
+  background-color: var(--navbar-background-color);
+  color: var(--navbar-a-color);
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .topnav.responsive {
+    position: absolute;
+    overflow: hidden;
+    background-color: var(--navbar-background-color);
+    position: fixed; /* Set the navbar to fixed position */
+    top:0px; left: 0; width: 100%;
+    padding-top:40px;
+    z-index: 9999;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: center;
+  }
 }
 
 .main {
@@ -110,19 +161,21 @@ h2 {padding: 10px 50px 0px 50px; text-align: center;}
 .row {
     display: flex; 
     flex-wrap: wrap; 
-    padding: 0px 80px 0px 80px
 }
 
 
 /* ABOUT ME STYLE */
 .maincol {   
-  padding: 100px 150px 70px 150px;
+  padding: 5vh 0px 5vh 0px;
   margin-top: 150px;
   margin-bottom: 80px;
-  background-image: linear-gradient(var(--grad1), var(--grad2)), url("Project_photos/ArtemicsFying.png");
+  background-image: linear-gradient(var(--grad1), var(--grad2)), 
+  var(--about-me-image); 
+  max-width:90%;
   background-size: 55%; /* Make the background image smaller */
   background-position: center;
   background-repeat: no-repeat;
+  font-size:var(--about-me-text-size);
 }
 
 /* SKILLS STYLE */
@@ -174,31 +227,17 @@ h2 {padding: 10px 50px 0px 50px; text-align: center;}
 .text {
   background-color: #304870;
   color: white;
-  font-size: 16px;
+  font-size: 1.5vw;
   padding: 16px 32px;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width:100%;
-  }
-}
 
 </style>
 </head>
 <body>
   
    <!-- STICKY NAV BAR SECTION -->
-  <div class="navbar" id="nav">
+  <!--<div class="topnav" id="nav">
     <div class="left">
       <img src="icons_and_such/icons8-light-mode-78.png" 
       alt="Toggle" class="toggle-button" onclick="toggleLightMode()" 
@@ -210,12 +249,49 @@ h2 {padding: 10px 50px 0px 50px; text-align: center;}
       <a href="#Projects">Projects</a>
       <a href="#Skills">Skills</a>
       <a href="#Resume">Resume</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
+  </div>-->
+  <div class="topnav" id="myTopnav">
+    <a href="websitev3.htm" id="home-nav">Home</a>
+    <a href="#Projects" id="projects-nav">Projects</a>
+    <a href="#Skills" id="skills-nav">Skills</a>
+    <a href="#Resume" id="resume-nav">Resume</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div class="left">
+      <img src="icons_and_such/icons8-light-mode-78.png" 
+      alt="Toggle" class="toggle-button" onclick="toggleLightMode()" 
+      id="toggle" style="width: 45px;">
+    </div>
+    <div class="center">Lola Anderson</div>
+
   </div>
+
+  <!--<div class="topnav" id="myTopnav">
+    <div class="left">
+      <img src="icons_and_such/icons8-light-mode-78.png" 
+      alt="Toggle" class="toggle-button" onclick="toggleLightMode()" 
+      id="toggle" style="width: 45px;">
+    </div>
+    <a href="#" id="name-nav" style="font-size:30px; font-weight:bold;">Lola Anderson</a>
+    <div class="right">
+      <a href="websitev3.htm" id="home-nav">Home</a>
+      <a href="#Projects" id="projects-nav">Projects</a>
+      <a href="#Skills" id="skills-nav">Skills</a>
+      <a href="#Resume" id="resume-nav">Resume</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>-->
 
     <!-- ABOUT ME SECTION -->
     <div class="maincol">
-      <p style="font-size:30px; font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(71, 82, 136, 0.8);" id="abt">
+      <p style="font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(71, 82, 136, 0.8);" id="abt">
         I am a student in my Senior year at Cornell University, 
         starting my career in Mechanical Engineering. Past internships 
         include Caterpillar, where I got to help extend diesel engine 
@@ -255,7 +331,7 @@ h2 {padding: 10px 50px 0px 50px; text-align: center;}
     <div class="portfolio_col">
       <a href="gimbal.htm">
         <div class="container">
-          <img src="Project_photos\camtracker.jpg" alt="Avatar" class="image">
+          <img src="project_photos\camtracker.jpg" alt="Avatar" class="image">
           <div class="middle">
             <div class="text">2.5 Axis Gimbal</div>
           </div>
@@ -264,7 +340,7 @@ h2 {padding: 10px 50px 0px 50px; text-align: center;}
       
       <a href="gimbal.htm">
         <div class="container">
-          <img src="Project_photos\IDGIMBALMODEL.jpg" alt="Avatar" class="image">
+          <img src="project_photos\IDGIMBALMODEL.jpg" alt="Avatar" class="image">
           <div class="middle">
             <div class="text">Dynamic Simulation of Free Gimbal</div>
           </div>
@@ -276,7 +352,7 @@ h2 {padding: 10px 50px 0px 50px; text-align: center;}
     <div class="portfolio_col">
       <a href="https://www.w3schools.com">
         <div class="container">
-          <img src="Project_photos\FEAWINGDES.jpg" alt="Avatar" class="image">
+          <img src="project_photos\FEAWINGDES.jpg" alt="Avatar" class="image">
           <div class="middle">
             <div class="text">Design and Finite Element Analysis of Airplane Wing using Optislang</div>
           </div>
@@ -285,7 +361,7 @@ h2 {padding: 10px 50px 0px 50px; text-align: center;}
       
       <a href="https://www.w3schools.com">
         <div class="container">
-          <img src="Project_photos\fusemold2.png" alt="Avatar" class="image">
+          <img src="project_photos\fusemold2.png" alt="Avatar" class="image">
           <div class="middle">
             <div class="text">Design and Manufacturing of VTOL Aircraft Carbon Fiber Fuselage Mold</div>
           </div>
@@ -297,7 +373,7 @@ h2 {padding: 10px 50px 0px 50px; text-align: center;}
     <div class="portfolio_col">
       <a href="https://www.w3schools.com">
         <div class="container">
-          <img src="Project_photos\ebay2.jpg" alt="Avatar" class="image">
+          <img src="project_photos\ebay2.jpg" alt="Avatar" class="image">
           <div class="middle">
             <div class="text">Custom VTOL Aircraft Electrical Bay</div>
           </div>
@@ -316,17 +392,6 @@ h2 {padding: 10px 50px 0px 50px; text-align: center;}
   <p style="text-align: center;">
     <img src="resume.jpg" alt="Resume" width=50%>
   </p>
-  <!--<a href="Lola_Anderson_Resume_August_2024.pdf" download>
-    <img src="/images/myw3schoolsimage.jpg" alt="Resume">
-  </a>
-  <h2 id="Resume">RESUME</h2>
-  <h5>Title description, Sep 2, 2017</h5>
-  <div class="fakeimg" style="height:200px;">Image</div>
-  <p>Some text..</p>
-  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum 
-    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-    exercitation ullamco.</p> -->
 </div>
 
 
@@ -346,16 +411,24 @@ h2 {padding: 10px 50px 0px 50px; text-align: center;}
         next.src="icons_and_such/icons8-chevron-down-white.png";
         tog.src="icons_and_such/icons8-light-mode-78.png";
         tog.style="width: 45px;";
-        abt.style="font-size:30px; font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(71, 82, 136, 0.8);";
+        abt.style="font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(71, 82, 136, 0.8);";
 
       } else {
         body.classList.add('light-mode');
         next.src="icons_and_such/icons8-chevron-down-black.png";
         tog.src="icons_and_such/icons8-dark-mode-50.png";
         tog.style="width: 35px;";
-        abt.style="font-size:30px; font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);";
+        abt.style="font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);";
       };
     }
+    function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
   </script>
 
 </body>
