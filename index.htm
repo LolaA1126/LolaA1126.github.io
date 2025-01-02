@@ -21,9 +21,13 @@
     --down-arrow: url("icons_and_such/icons8-chevron-down-white.png");
     --grad1: #1b283e24;
     --grad2: #20304d1e;
-    --about-me-text-size: 3.5vw;
-    --about-me-image: url('project_photos/artemis-flying-vert.jpg');
-    --skills-font-size:40px:
+    --about-me-text-size: 2.2vw;
+    --about-me-image: url('project_photos/artemis-flying-full.png');
+    --skills-font-size:3.5vh;
+    --tag-cloud-font-size:2.5vh;
+    --background-size: 50%; 
+    --resume-size: 50vw; 
+    
 }
 
 .light-mode {
@@ -37,13 +41,36 @@
     --grad1: #ffffff2a;
     --grad2: #ffffff3e;
 }
-.phone-mode {
-  --about-me-text-size: 3.5vw;
-  --about-me-image: url("project_photos/artemis-flying-full.png");
-  --skills-font-size:22px;
+
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+    padding: 20px; /* Add padding for better spacing on small screens */
+  }
+  .portfolio_col {
+    flex: 100%; /* Make each column take full width */
+  }
+  .maincol {
+    padding: 100px 50px 70px 50px; /* Adjust padding for smaller screens */
+  }
+  :root {
+    --resume-size: 70vw; 
+  }
 }
 
-
+@media screen and (max-width: 550px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+  :root{
+    --about-me-text-size: 4vw;
+    --about-me-image: url("project_photos/artemis-flying-vert.jpg");
+    --skills-font-size:30px;
+    --tag-cloud-font-size:2.5vh;
+    --background-size:70%;
+  }
+}
 ::-moz-selection { /* Code for Firefox */
   color: #304870;
   background: #D4E9FF;
@@ -59,7 +86,6 @@ html {scroll-behavior: smooth;}
 
 body {
   font-family: 'Abel';
-  font-size: 22px;
   margin:0;
   padding-top: 40px;
   color: var(--text-color);
@@ -70,7 +96,11 @@ body {
 /* Increase the font size of the h1 element */
 h1 {padding: 20px 50px 20px 50px;} 
 
-h2 {padding: 10px 50px 0px 50px; text-align: center; font-size: var(--skills-font-size);} 
+h2 {
+  padding: 10px 50px 0px 50px; 
+  text-align: center; 
+  font-size: var(--skills-font-size);
+} 
 
 
 /* Style the top navigation bar */
@@ -89,13 +119,14 @@ h2 {padding: 10px 50px 0px 50px; text-align: center; font-size: var(--skills-fon
   text-align: right;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .topnav .left {
   position: absolute;
   left: 0;
-  padding-left: 20px;
+  padding-top: 3px;
+  padding-left: 10px;
 }
 
 .topnav .center {
@@ -154,25 +185,30 @@ h2 {padding: 10px 50px 0px 50px; text-align: center; font-size: var(--skills-fon
 
 .main {
   padding: 0px 50px;
-  width: 100%;
+  width: 90%;
+  text-align: center;
 }
 
 /* Column container */
 .row {
     display: flex; 
     flex-wrap: wrap; 
+    text-align: center;
 }
 
 
 /* ABOUT ME STYLE */
-.maincol {   
+.maincol {  
+  justify-content: center; 
   padding: 5vh 0px 5vh 0px;
-  margin-top: 150px;
-  margin-bottom: 80px;
-  background-image: linear-gradient(var(--grad1), var(--grad2)), 
-  var(--about-me-image); 
+  text-align: center; 
+  align-items: center;
+  margin-top: 14vh;
+  margin-bottom: 14vh;
+  background-image: var(--about-me-image); 
   max-width:90%;
-  background-size: 55%; /* Make the background image smaller */
+ 
+  background-size: var(--background-size); /* Make the background image smaller */
   background-position: center;
   background-repeat: no-repeat;
   font-size:var(--about-me-text-size);
@@ -182,6 +218,7 @@ h2 {padding: 10px 50px 0px 50px; text-align: center; font-size: var(--skills-fon
 .tag-cloud {
   display: inline-block;
   color: var(--tag-cloud-text-color);
+  font-size: var(--tag-cloud-font-size);
   padding: 0px 20px 0px;
   border-radius: 25px;
   background-color: var(--tag-cloud-background-color);
@@ -196,7 +233,7 @@ h2 {padding: 10px 50px 0px 50px; text-align: center; font-size: var(--skills-fon
 .portfolio_col {
   flex: 30%;
   text-align: center;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 10px 10px 10px;
 }
 
 /* FADE IN */
@@ -291,7 +328,7 @@ h2 {padding: 10px 50px 0px 50px; text-align: center; font-size: var(--skills-fon
 
     <!-- ABOUT ME SECTION -->
     <div class="maincol">
-      <p style="font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(71, 82, 136, 0.8);" id="abt">
+      <p style="font-weight: bold; font-size: var(--about-me-text-size); text-shadow: 2px 2px 4px rgba(71, 82, 136, 0.8);">
         I am a student in my Senior year at Cornell University, 
         starting my career in Mechanical Engineering. Past internships 
         include Caterpillar, where I got to help extend diesel engine 
@@ -306,13 +343,12 @@ h2 {padding: 10px 50px 0px 50px; text-align: center; font-size: var(--skills-fon
   <div class="main" id="content">
       <!-- SKILLS SECTION -->
       <h2 id="Skills">SKILLS</h2>
-      <p style="text-align: center;">
       <span class="tag-cloud">NX</span>
       <span class="tag-cloud">Solidworks</span>
       <span class="tag-cloud">ANSYS</span>
       <span class="tag-cloud">NASTRAN</span>
       <span class="tag-cloud">Matlab</span>
-      <span class="tag-cloud">Python</span></p>
+      <span class="tag-cloud">Python</span>
 
       <!-- NEXT BUTTON -->
       <a href="#Projects">
@@ -390,7 +426,7 @@ h2 {padding: 10px 50px 0px 50px; text-align: center; font-size: var(--skills-fon
     </a>
   </div>
   <p style="text-align: center;">
-    <img src="resume.jpg" alt="Resume" width=50%>
+    <img src="resume.jpg" alt="Resume" style="width:var(--resume-size);">
   </p>
 </div>
 
