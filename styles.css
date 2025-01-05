@@ -164,6 +164,8 @@ body {
     padding-top: 3vh;
     margin-left: 14vh;
     margin-right: 14vh;
+    position: relative;
+    
   }
   :root {
     --tag-cloud-font-size:2.3vh;
@@ -272,6 +274,9 @@ h2 {
   display: flex; 
   flex-wrap: wrap; 
   text-align: center;
+  justify-content: center; /* Center align all child elements */
+  align-items: center;
+  padding: 10px 0px;
   padding: 10px 0px 10px 0px;
 }
 .portfolio_col {
@@ -288,6 +293,9 @@ h2 {
   .portfolio_col {
     flex: 100%;
     text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
   } 
   :root {
     --proj-font-size:2.5vw;
@@ -306,6 +314,7 @@ h2 {
   width: 100%; 
   padding-bottom: 20px;
   justify-items: center;
+  justify-content: center;
 }
 
 .image {
@@ -315,6 +324,9 @@ h2 {
   height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
+  position: relative;
+  
+  
 }
 
 .middle {
