@@ -36,10 +36,12 @@
 html {scroll-behavior: smooth;}
 body {
   font-family: 'Abel';
-  margin: 0;
+  margin: 0 auto;
+  text-align:center;
   color: var(--text-color);
   background-color: var(--background-color);
   justify-items: center;
+  justify-content: center;
 }
 
 /* TOP NAV BAR */
@@ -247,13 +249,14 @@ body {
 
 /* SKILLS SECTION */
 h2 {
-  padding: 10px 50px 0px 50px; 
+  margin: 3vh auto 2vh auto; 
   text-align: center; 
   font-size: var(--skills-font-size);
 } 
 .main {
   width: 90%;
   text-align: center;
+  margin: 0 auto;
 }
 .tag-cloud {
   display: inline-block;
@@ -265,6 +268,7 @@ h2 {
   margin-top: 8px;
   margin-bottom: 8px;
   text-align: center;
+  margin: 8px auto;
   align-items: center;
   justify-items: center;
   }
@@ -315,6 +319,8 @@ h2 {
   padding-bottom: 20px;
   justify-items: center;
   justify-content: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .image {
