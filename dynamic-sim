@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Lola Anderson</title>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- STICKY NAV BAR SECTION -->
+    <div class="topnav" id="myTopnav">
+        <a href="websitev3.htm" id="home-nav">Home</a>
+        <a href="#Projects" id="projects-nav">Projects</a>
+        <a href="#Skills" id="skills-nav">Skills</a>
+        <a href="#Resume" id="resume-nav">Resume</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <div class="left">
+          <img id="toggle"
+          src="icons_and_such/icons8-light-mode-78.png" 
+          alt="Toggle" class="toggle-button"
+          onclick="toggleLightMode()" style="width: 45px;">
+        </div>
+        <div class="center">Lola Anderson</div>
+    </div>
+    
+        <!-- ABOUT ME SECTION -->
+    <div class="row">
+        <div class="col1"> 
+            <img src="project_photos/artemis-flying-full.png" 
+            style="height: var(--plane-height);">
+        </div>
+        <div class="col2">
+        I am a student in my Senior year at Cornell University, 
+        starting my career in Mechanical Engineering. Past internships 
+        include Caterpillar, where I got to help extend diesel engine 
+        lifecycles, and SpaceX where designed many parts for Falcon 9 
+        Payload Integration. While at Cornell, I am a member of CUAir, 
+        a project team where I was a member of Integration and Testing 
+        Operations subteam. I hope you enjoy checking out some of the projects 
+        I have worked on and some of my other interests!
+        </div>
+    </div>
+    
+    <div class="main" id="content">
+
+        <!-- SKILLS SECTION -->
+        <h2 id="Skills">SKILLS</h2>
+        <span class="tag-cloud">NX</span>
+        <span class="tag-cloud">Solidworks</span>
+        <span class="tag-cloud">ANSYS</span>
+        <span class="tag-cloud">NASTRAN</span>
+        <span class="tag-cloud">Matlab</span>
+        <span class="tag-cloud">Python</span>
+    
+        <!-- NEXT BUTTON -->
+        <a href="#Projects">
+            <p style="text-align: center;">
+                <img id="next" src="icons_and_such\icons8-chevron-down-white.png" 
+                alt="Next" style="height:5vh; width:5vh">
+            </p>
+        </a>
+    </div>
+    
+    <!-- PROJECTS SECTION -->
+    <div class="main" id="Projects">
+      <h2>PROJECTS</h2>
+      <hr class="w3-opacity"/>
+    
+    <!-- COLUMN 1 -->
+      <div class="row-proj">
+        <div class="portfolio_col">
+          <a href="gimbal.htm">
+            <div class="container">
+              <img src="project_photos\camtracker.jpg" alt="Avatar" class="image">
+              <div class="middle">
+                <div class="text">2.5 Axis Gimbal</div>
+              </div>
+            </div>
+          </a>
+          
+          <a href="gimbal.htm">
+            <div class="container">
+              <img src="project_photos\IDGIMBALMODEL.jpg" alt="Avatar" class="image">
+              <div class="middle">
+                <div class="text">Dynamic Simulation of Free Gimbal</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+    <!-- COLUMN 2 -->
+        <div class="portfolio_col">
+          <a href="https://www.w3schools.com">
+            <div class="container">
+              <img src="project_photos\FEAWINGDES.jpg" alt="Avatar" class="image">
+              <div class="middle">
+                <div class="text">FEA on Plane Wing using ANSYS Optislang</div>
+              </div>
+            </div>
+          </a>
+          
+          <a href="https://www.w3schools.com">
+            <div class="container">
+              <img src="project_photos\fusemold2.png" alt="Avatar" class="image">
+              <div class="middle">
+                <div class="text">Carbon Fiber Fuselage Mold</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+    <!-- COLUMN 3 -->
+        <div class="portfolio_col">
+          <a href="https://www.w3schools.com">
+            <div class="container">
+              <img src="project_photos\ebay2.jpg" alt="Avatar" class="image">
+              <div class="middle">
+                <div class="text">Custom VTOL Aircraft Electrical Bay</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    
+    <!-- RESUME SECTION -->
+    <h2 id="Resume">RESUME</h2>
+      <div style="text-align:center; margin-top:10px;">
+        <a href="Lola_Anderson_Resume_August_2024.pdf" download>
+            <span class="tag-cloud" style= "margin-bottom: 10px">Download Resume</span>
+        </a>
+      </div>
+      <p style="text-align: center;">
+        <img src="resume.jpg" alt="Resume" style="width:var(--resume-size);">
+      </p>
+    </div>
+    
+    
+    <div class="footer">
+    <h2>Footer</h2>
+    </div>
+    
+    <script>
+        function toggleLightMode() {
+          var body = document.body;
+          var next = document.getElementById("next")
+          var tog = document.getElementById("toggle")
+          var abt = document.getElementById("abt")
+          if (body.classList.contains('light-mode')) 
+          { 
+            body.classList.remove('light-mode');
+            next.src="icons_and_such/icons8-chevron-down-white.png";
+            tog.src="icons_and_such/icons8-light-mode-78.png";
+            tog.style="width: 45px;";
+            abt.style="font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(71, 82, 136, 0.8);";
+    
+          } else {
+            body.classList.add('light-mode');
+            next.src="icons_and_such/icons8-chevron-down-black.png";
+            tog.src="icons_and_such/icons8-dark-mode-50.png";
+            tog.style="width: 35px;";
+            abt.style="font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);";
+          };
+        }
+        function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>    
+</body>
+</html>
