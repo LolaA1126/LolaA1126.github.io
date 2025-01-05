@@ -146,7 +146,7 @@ body {
   .col2 {
     flex: 100%;
     text-align: center;
-    padding-top: 3vh;
+    padding:3vh 3vw 0 3vw;
     margin-left: 12vh;
     margin-right: 12vh;
   }
@@ -163,7 +163,7 @@ body {
   .col2 {
     flex: 100%;
     text-align: center;
-    padding-top: 3vh;
+    padding:3vh 3vw 0 3vw;
     margin-left: 14vh;
     margin-right: 14vh;
     position: relative;
@@ -182,7 +182,7 @@ body {
   .col2 {
     flex: 100%;
     text-align: center;
-    padding-top: 3vh;
+    padding:3vh 3vw 0 3vw;
     margin-left: 5vw;
     margin-right: 5vw;
   }
@@ -199,7 +199,7 @@ body {
   .col2 {
     flex: 100%;
     text-align: center;
-    padding-top: 3vh;
+    padding:3vh 3vw 0 3vw;
     margin-left: 3vw;
     margin-right: 3vw;
   }
@@ -217,7 +217,7 @@ body {
   .col2 {
     flex: 100%;
     text-align: center;
-    padding-top: 3vh;
+    padding:3vh 3vw 0 3vw;
     margin-left: 3vw;
     margin-right: 3vw;
   }
@@ -225,7 +225,7 @@ body {
     --tag-cloud-font-size:2.4vh;
     --resume-size: 65vw; 
     --plane-height: 41vw;
-    --about-me-text-size: 3.1vw;
+    --about-me-text-size: 3vw;
     --skills-font-size: 3.1vh;
   } 
 }
@@ -234,7 +234,7 @@ body {
   .col2 {
     flex: 100%;
     text-align: center;
-    padding-top: 2vh;
+    padding: 2vh 3vw 0 3vw;
     margin-left: 3vw;
     margin-right: 3vw;
   }
@@ -242,7 +242,7 @@ body {
     --tag-cloud-font-size:2.3vh;
     --resume-size: 70vw; 
     --plane-height: 45vw;
-    --about-me-text-size: 3.78vw;
+    --about-me-text-size: 3.5vw;
     --skills-font-size: 2.9vh;
   } 
 }
@@ -262,7 +262,7 @@ h2 {
   display: inline-block;
   color: var(--tag-cloud-text-color);
   font-size: var(--tag-cloud-font-size);
-  padding: 0px 20px 0px;
+  padding: 0px 20px;
   border-radius: 25px;
   background-color: var(--tag-cloud-background-color);
   margin-top: 8px;
