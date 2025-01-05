@@ -189,8 +189,8 @@ body {
   :root {
     --tag-cloud-font-size:2.3vh;
     --resume-size: 60vw;
-    --plane-height: 34vw;
-    --about-me-text-size: 2.6vw;
+    --plane-height: 30vw;
+    --about-me-text-size: 2.3vw;
     --skills-font-size: 3.2vh;
   } 
 }
@@ -207,7 +207,7 @@ body {
     --tag-cloud-font-size:2.4vh;
     --resume-size: 65vw; 
     --plane-height: 38vw;
-    --about-me-text-size: 3.2vw;
+    --about-me-text-size: 2.5vw;
     --skills-font-size: 3.1vh;
   } 
 }
@@ -224,8 +224,8 @@ body {
   :root {
     --tag-cloud-font-size:2.4vh;
     --resume-size: 65vw; 
-    --plane-height: 41vw;
-    --about-me-text-size: 3vw;
+    --plane-height: 37vw;
+    --about-me-text-size: 2.65vw;
     --skills-font-size: 3.1vh;
   } 
 }
@@ -242,7 +242,47 @@ body {
     --tag-cloud-font-size:2.3vh;
     --resume-size: 70vw; 
     --plane-height: 45vw;
+    --about-me-text-size: 3.00vw;
+    --skills-font-size: 2.9vh;
+  } 
+}
+@media screen and (max-width: 500px) {
+  .row {height: 72vh;}
+  .col1 {flex: 100%;}
+  .col2 {
+    flex: 100%;
+    text-align: center;
+    padding:3vh 3vw 0 3vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
+  :root {
+    --tag-cloud-font-size:2.4vh;
+    --resume-size: 65vw; 
+    --plane-height: 41vw;
     --about-me-text-size: 3.5vw;
+    --skills-font-size: 3.1vh;
+  } 
+}
+@media screen and (max-width: 400px) {
+  .row {
+    height: 70vh;
+    padding-top:10vh;
+    padding-bottom:3vh;
+  }
+  .col1 {flex: 100%;}
+  .col2 {
+    flex: 100%;
+    text-align: center;
+    padding: 1vh 3vw 0 3vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
+  :root {
+    --tag-cloud-font-size:2.3vh;
+    --resume-size: 70vw; 
+    --plane-height: 45vw;
+    --about-me-text-size: 3.7vw;
     --skills-font-size: 2.9vh;
   } 
 }
@@ -251,12 +291,13 @@ body {
 h2 {
   margin: 3vh auto 2vh auto; 
   text-align: center; 
+  margin: 0 auto;
   font-size: var(--skills-font-size);
 } 
 .main {
   width: 90%;
   text-align: center;
-  margin: 0 auto;
+  margin: 2vh auto;
 }
 .tag-cloud {
   display: inline-block;
@@ -279,7 +320,7 @@ h2 {
   flex-wrap: wrap; 
   text-align: center;
   justify-content: center; /* Center align all child elements */
-  align-items: center;
+  margin: 0 auto;
   padding: 10px 0px;
   padding: 10px 0px 10px 0px;
 }
@@ -287,6 +328,7 @@ h2 {
   flex: 30%;
   text-align: center;
   padding: 0px 10px 0px 10px;
+  margin: 0 auto;
 }
 @media screen and (max-width: 1000px) { 
   :root {
@@ -331,8 +373,7 @@ h2 {
   transition: .5s ease;
   backface-visibility: hidden;
   position: relative;
-  
-  
+  text-align: center;
 }
 
 .middle {
