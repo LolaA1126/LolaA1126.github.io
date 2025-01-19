@@ -1,4 +1,3 @@
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +11,7 @@
 <body>
     <!-- STICKY NAV BAR SECTION -->
     <div class="topnav" id="myTopnav">
-        <a href="websitev3.htm" id="home-nav">Home</a>
+        <a href="index.htm" id="home-nav">Home</a>
         <a href="#Projects" id="projects-nav">Projects</a>
         <a href="#Skills" id="skills-nav">Skills</a>
         <a href="#Resume" id="resume-nav">Resume</a>
@@ -27,116 +26,105 @@
         </div>
         <div class="center">Lola Anderson</div>
     </div>
-    
-        <!-- ABOUT ME SECTION -->
-    <div class="row">
-        <div class="col1"> 
-            <img src="project_photos/artemis-flying-full.png" 
-            style="height: var(--plane-height);">
-        </div>
-        <div class="col2">
-        I am a student in my Senior year at Cornell University, 
-        starting my career in Mechanical Engineering. Past internships 
-        include Caterpillar, where I got to help extend diesel engine 
-        lifecycles, and SpaceX where designed many parts for Falcon 9 
-        Payload Integration. While at Cornell, I am a member of CUAir, 
-        a project team where I was a member of Integration and Testing 
-        Operations subteam. I hope you enjoy checking out some of the projects 
-        I have worked on and some of my other interests!
-        </div>
-    </div>
-    
-    <div class="main" id="content">
 
-        <!-- SKILLS SECTION -->
-        <h2 id="Skills">SKILLS</h2>
-        <span class="tag-cloud">NX</span>
-        <span class="tag-cloud">Solidworks</span>
-        <span class="tag-cloud">ANSYS</span>
-        <span class="tag-cloud">NASTRAN</span>
-        <span class="tag-cloud">Matlab</span>
-        <span class="tag-cloud">Python</span>
-    
-        <!-- NEXT BUTTON -->
-        <a href="#Projects">
-            <p style="text-align: center;">
-                <img id="next" src="icons_and_such\icons8-chevron-down-white.png" 
-                alt="Next" style="height:5vh; width:5vh">
-            </p>
-        </a>
+    <div class="project-section">
+      <h1>Dynamic Simulations of 2.5 Axis Gimbal</h1>
+      <div class="proj-header-image">
+        <img src="project_photos/camtracker.jpg"
+        style="width:var(--proj-image-size);">
+        <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
+          <b>Figure 1:</b> CAD Model of 2.5 Axis Camera Gimbal</div>
+      </div>
+      <div class="proj-text"> This project focuses on the dynamics of a 2.5-axis camera gimbal designed for automatic overhead tracking of planes when powered on. For this project, I explored the gimbal behavior as a free-moving system constrained by its axes when powered off. The gimbal must remain stable under various conditions, including when its base is held by a human and subjected to movement. The project explores dynamic phenomena such as gimbal lock, reactions to translational acceleration, and behavior under gravitational forces after being released from different angles. The purpose of this project was to determine the behavior of the gimbal which I had previously designed for my project team, CU Air.
+      </div>
     </div>
-    
-    <!-- PROJECTS SECTION -->
-    <div class="main" id="Projects">
-      <h2>PROJECTS</h2>
-      <hr class="w3-opacity"/>
-    
-    <!-- COLUMN 1 -->
-      <div class="row-proj">
-        <div class="portfolio_col">
-          <a href="gimbal.htm">
-            <div class="container">
-              <img src="project_photos\camtracker.jpg" alt="Avatar" class="image">
-              <div class="middle">
-                <div class="text">2.5 Axis Gimbal</div>
-              </div>
-            </div>
-          </a>
-          
-          <a href="dynamic-sim.htm">
-            <div class="container">
-              <img src="project_photos\IDGIMBALMODEL.jpg" alt="Avatar" class="image">
-              <div class="middle">
-                <div class="text">Dynamic Simulation of Free Gimbal</div>
-              </div>
-            </div>
-          </a>
+
+    <div class="project-section">
+      <h3 style="font-size:27px;">System Design and Dynamics</h3>
+      <p>
+        <div class="proj-text"> The gimbal features adjustable arms for fine-tuning the center of gravity (CG), as shown in the CAD model (Figure 1). Adjusting the arms enables simulations targeting specific dynamic effects. Notable behaviors include:
+        
+        <ul>
+          <li><b>Gimbal Lock:</b> Alignment of two axes restricting movement.</li>
+          <li><b>Base Acceleration Response:</b> How the system reacts to translational acceleration with varying initial conditions.</li>
+          <li><b>Gravitational Behavior:</b> The response of the gimbal when released at different angles under gravity.</li>
+       </ul> 
+      </div>
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h3 style="font-size:27px;">Analytical Modeling</h3>
+      <p>
+        <div class="proj-text">To simplify the dynamics, the system's motors and camera were modeled as point masses, with the gimbal arms assumed to have negligible mass. Using three non-inertial reference frames (aligned with gimbal arms and the camera lens), dynamic analyses were performed using both the Euler-Lagrange and Differential-Algebraic Equation (DAE) methods.
+          Key steps included:
+        <ul>
+          <li>Deriving equations of motion using rotation matrices and potential/kinetic energy calculations.</li>
+          <li>Solving these equations numerically in MATLAB, employing Jacobian operators and the ode45 solver.</li>
+       </ul> 
+      </div>
+      </p>
+
+      <div class="proj-row">
+        <div class="proj-column-two">
+          <img src="project_photos\dynamics-diagram1.jpg"/>
         </div>
-      
-    <!-- COLUMN 2 -->
-        <div class="portfolio_col">
-          <a href="https://www.w3schools.com">
-            <div class="container">
-              <img src="project_photos\FEAWINGDES.jpg" alt="Avatar" class="image">
-              <div class="middle">
-                <div class="text">FEA on Plane Wing using ANSYS Optislang</div>
-              </div>
-            </div>
-          </a>
-          
-          <a href="https://www.w3schools.com">
-            <div class="container">
-              <img src="project_photos\fusemold2.png" alt="Avatar" class="image">
-              <div class="middle">
-                <div class="text">Carbon Fiber Fuselage Mold</div>
-              </div>
-            </div>
-          </a>
-        </div>
-    
-    <!-- COLUMN 3 -->
-        <div class="portfolio_col">
-          <a href="https://www.w3schools.com">
-            <div class="container">
-              <img src="project_photos\ebay2.jpg" alt="Avatar" class="image">
-              <div class="middle">
-                <div class="text">Custom VTOL Aircraft Electrical Bay</div>
-              </div>
-            </div>
-          </a>
+        <div class="proj-column-two">
+          <img src="project_photos\dynamics-diagram2.jpg"/>
         </div>
       </div>
-    
-    <!-- RESUME SECTION -->
-    <h2 id="Resume">RESUME</h2>
+      <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;">
+        <b>Figure 2 and 3:</b> A simplified gimbal with relevant lengths defined (left) and an FBD of the simplified model gimbal (right)
+      </div>
+      <p><div class="proj-text">
+        The diagrams above show the three non inertial reference frames aligned with the gimbal arms and the camera lens, which I will be using during this analysis. It also defines the inertial reference frame, centered at the origin. The model may translate in the î direction, and the angles ⍴, ɸ, and Ѱ are free to change. The force F in the FBD will sometimes be present and when it is, the model may translate in the î direction. When F is not prescribed, the system will be fixed at the origin.
+      </div></p>
+      <div class="two-proj-header-images">
+        <div class="col1">
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h3 style="font-size:27px;">Findings</h3>
+      <p>
+        <div class="proj-text">
+        <ul>
+          <li><b>Balanced vs. Unbalanced Systems:</b> When the CG aligns with the intersection of all axes (balanced), the camera experiences lower forces but higher vibrations. These vibrations, attributed to modeling approximations (e.g., motors and camera as point masses), suggest the need for improved modeling with moments of inertia.</li>
+          <li><b>Method Performance:</b> The Euler-Lagrange approach was computationally efficient but less flexible for prescribed changes, while the DAE method supported more complex conditions at the cost of higher computational time.</li>
+       </ul> 
+      </div>
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h3 style="font-size:27px;"> Visualization and Conclusion</h3>
+      <p>
+        <div class="proj-header-image">
+          <img src="project_photos\dynamics-visualization.jpg"
+          style="width:var(--proj-image-size);">
+          <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
+            <b>Figure 4:</b> Animation at t=3.2s</div>
+        </div>
+        <div class="proj-text">Through this project, I learned the importance of incremental problem-solving combined with periodic validation. Breaking down complex systems and verifying results at each step could have streamlined debugging. Additionally, while approximations simplify initial modeling, they can introduce discrepancies, underscoring the need for rigorous validation through refined simulations and experimental testing.
+          The full report includes the math I preformed to make my simulations for both the DAE and Lagrange Methods.
+        </div>
+      </p>
+    </div>
+
+    <!-- REPORT SECTION -->
+    <h2 id="Resume">Report</h2>
       <div style="text-align:center; margin-top:10px;">
-        <a href="Lola_Anderson_Resume_August_2024.pdf" download>
-            <span class="tag-cloud" style= "margin-bottom: 10px">Download Resume</span>
+        <a href="landerson-intermediate-dynamics-final-project.pdf" download>
+            <span class="tag-cloud" style= "margin-bottom: 10px">Download Report</span>
         </a>
       </div>
-      <p style="text-align: center;">
-        <img src="resume.jpg" alt="Resume" style="width:var(--resume-size);">
-      </p>
+      <object class="pdf" 
+            data="landerson-intermediate-dynamics-final-project.pdf"
+            width="800"
+            height="500">
+    </object>
     </div>
     
     
