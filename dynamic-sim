@@ -11,7 +11,7 @@
 <body>
     <!-- STICKY NAV BAR SECTION -->
     <div class="topnav" id="myTopnav">
-        <a href="websitev3.htm" id="home-nav">Home</a>
+        <a href="index.htm" id="home-nav">Home</a>
         <a href="#Projects" id="projects-nav">Projects</a>
         <a href="#Skills" id="skills-nav">Skills</a>
         <a href="#Resume" id="resume-nav">Resume</a>
@@ -26,29 +26,58 @@
         </div>
         <div class="center">Lola Anderson</div>
     </div>
+    <div class="project-section">
+      <h1>Dynamic Simulations of 2.5 Axis Gimbal</h1>
+      <div class="proj-header-image">
+        <img src="project_photos\IDGIMBALMODEL.jpg"
+        style="width:var(--proj-image-size); margin-bottom: 3vh;">
+      </div>
+      <div class="proj-text"> In this report I will go into detail about the dynamics of a 2.5 axis camera gimbal.  For background, when the system is powered on, it will be used for automatic overhead tracking of planes, however when the system is powered off and the motors act as axis constraints, allowing the camera and gimbal arms to rotate freely. The gimbal itself may not be entirely stationary 
+        and may be held by a human. In this case, the system should be fairly stable when the base is moved or rotated. This situation yields a number of interesting dynamic phenomena which are analysed and modelled in this report. 
+
+        As shown in figure 1, the camera gimbal has adjustable arms, allowing for different positioning of the center of gravity. The lengths of the arms are adjusted for dynamic simulations in order to target certain effects.
+
+        One of the interesting behaviors I will explore is called gimbal lock. This is when two of the Gimbal Axes Align, causing a restriction in the motion that can be achieved by the gimbals movement.  Another behavior we will look into is 
+        how the gimbal reacts to translational acceleration of the base with several different initial conditions. The final phenomenon that I will explore is how this gimbal will behave when it is held at different angles and then released with gravity being the only force acting on the gimbal.
+        </div>
+    </div>
+
+    <div class="project-section">
+      <h3 style="font-size:27px;">Setup of the Analytical Models</h3>
+      <div class="proj-text"> For my analytical model of the system, I have simplified the scenario by considering the masses of the motors and camera as point masses, rather than rigid bodies. I also chose to consider the gimbal arms as having negligible mass and moments of inertia.
+      </div>
+      <div class="proj-header-image">
+        <img src="project_photos\gimbal-diagram.jpg"
+        style="width:70%; margin-bottom: 3vh;">
+      </div>
+      <div class="proj-text" style="text-align: center;">
+        Figure 2 and 3: A simplified gimbal with relevant lengths defined (left) and an FBD of the simplified model gimbal (right)
+      </div>
+      <div class="proj-text">
+        The diagrams above show the three non inertial reference frames aligned with the gimbal arms and the camera lens, which I will be using during this analysis. It also defines the inertial reference frame, centered at the origin. The model may translate in the î direction, and the angles ⍴, ɸ, and Ѱ are free to change. The force F in the FBD will sometimes be present and when it is, the model may translate in the î direction. When F is not prescribed, the system will be fixed at the origin.
+      </div>
+      <div class="two-proj-header-images">
+        <div class="col1">
+          
+        </div>
+      </div>
+    </div>
     
         <!-- ABOUT ME SECTION -->
     <div class="row">
         <div class="col1"> 
-            <img src="project_photos/artemis-flying-full.png" 
+            <img src="project_photos\IDGIMBALMODEL.jpg"
             style="height: var(--plane-height);">
         </div>
         <div class="col2">
-        I am a student in my Senior year at Cornell University, 
-        starting my career in Mechanical Engineering. Past internships 
-        include Caterpillar, where I got to help extend diesel engine 
-        lifecycles, and SpaceX where designed many parts for Falcon 9 
-        Payload Integration. While at Cornell, I am a member of CUAir, 
-        a project team where I was a member of Integration and Testing 
-        Operations subteam. I hope you enjoy checking out some of the projects 
-        I have worked on and some of my other interests!
+        Description of Project
         </div>
     </div>
     
     <div class="main" id="content">
 
         <!-- SKILLS SECTION -->
-        <h2 id="Skills">SKILLS</h2>
+        <h2 id="Skills">SKILLS LEARNED</h2>
         <span class="tag-cloud">NX</span>
         <span class="tag-cloud">Solidworks</span>
         <span class="tag-cloud">ANSYS</span>
@@ -65,69 +94,8 @@
         </a>
     </div>
     
-    <!-- PROJECTS SECTION -->
-    <div class="main" id="Projects">
-      <h2>PROJECTS</h2>
-      <hr class="w3-opacity"/>
-    
-    <!-- COLUMN 1 -->
-      <div class="row-proj">
-        <div class="portfolio_col">
-          <a href="gimbal.htm">
-            <div class="container">
-              <img src="project_photos\camtracker.jpg" alt="Avatar" class="image">
-              <div class="middle">
-                <div class="text">2.5 Axis Gimbal</div>
-              </div>
-            </div>
-          </a>
-          
-          <a href="gimbal.htm">
-            <div class="container">
-              <img src="project_photos\IDGIMBALMODEL.jpg" alt="Avatar" class="image">
-              <div class="middle">
-                <div class="text">Dynamic Simulation of Free Gimbal</div>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-    <!-- COLUMN 2 -->
-        <div class="portfolio_col">
-          <a href="https://www.w3schools.com">
-            <div class="container">
-              <img src="project_photos\FEAWINGDES.jpg" alt="Avatar" class="image">
-              <div class="middle">
-                <div class="text">FEA on Plane Wing using ANSYS Optislang</div>
-              </div>
-            </div>
-          </a>
-          
-          <a href="https://www.w3schools.com">
-            <div class="container">
-              <img src="project_photos\fusemold2.png" alt="Avatar" class="image">
-              <div class="middle">
-                <div class="text">Carbon Fiber Fuselage Mold</div>
-              </div>
-            </div>
-          </a>
-        </div>
-    
-    <!-- COLUMN 3 -->
-        <div class="portfolio_col">
-          <a href="https://www.w3schools.com">
-            <div class="container">
-              <img src="project_photos\ebay2.jpg" alt="Avatar" class="image">
-              <div class="middle">
-                <div class="text">Custom VTOL Aircraft Electrical Bay</div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    
     <!-- RESUME SECTION -->
-    <h2 id="Resume">RESUME</h2>
+    <h2 id="Resume">Paper</h2>
       <div style="text-align:center; margin-top:10px;">
         <a href="Lola_Anderson_Resume_August_2024.pdf" download>
             <span class="tag-cloud" style= "margin-bottom: 10px">Download Resume</span>
