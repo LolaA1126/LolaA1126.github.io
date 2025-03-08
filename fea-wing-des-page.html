@@ -27,101 +27,159 @@
         <div class="center">Lola Anderson</div>
     </div>
 
+    <!-- TITLE -->
     <div class="project-section">
-      <h1>Dynamic Simulations of 2.5 Axis Gimbal</h1>
+      <h1>Optimization and Finite Element Analysis of Wing Design</h1>
       <div class="proj-header-image">
-        <img src="project_photos/camtracker.jpg"
+        <img src="project_photos\FEAWINGDES.jpg"
         style="width:var(--proj-image-size);">
         <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
-          <b>Figure 1:</b> CAD Model of 2.5 Axis Camera Gimbal</div>
+          <b>Figure 1:</b> Initial wing gometry modeled in Spaceclaim</div>
       </div>
-      <div class="proj-text"> This project focuses on the dynamics of a 2.5-axis camera gimbal designed for automatic overhead tracking of planes when powered on. For this project, I explored the gimbal behavior as a free-moving system constrained by its axes when powered off. The gimbal must remain stable under various conditions, including when its base is held by a human and subjected to movement. The project explores dynamic phenomena such as gimbal lock, reactions to translational acceleration, and behavior under gravitational forces after being released from different angles. The purpose of this project was to determine the behavior of the gimbal which I had previously designed for my project team, CU Air.
+      <div class="proj-text">This project involved designing and optimizing a 15 meter long 
+        aircraft wing made from 2024-T36 Aluminum to minimize weight using ANSYS. 
+        The geometry model contains the skin, spars, and ribs of the wing. Analysis was conducted assuming  
+        typical loading conditions in flight, that is, fixed to the fuselage and experiencing 
+        loads due to the weight of the structure as well as aerodynamic pressure.  The aerodynamic 
+        forces were simulated using a negative pressure on the top skin in ANSYS and a positive 
+        pressure on the bottom wing skin surface. These constraints were dictated by the assignment guidelines and roughly estimate 
+        the way a wing generates lift. <br><br>
+      </div>
+      <div class="proj-text">The design variables included the thicknesses 
+        of the major structural elements, as well as number, location, and shapes of  
+        spars and ribs. A minimum safety factor of 1.5 and maximum a tip deflection of 
+        0.375 m are also imposed.<br><br>
+      </div>
+      <h1>Approach and Outcome</h1>
+      <div class="proj-text">The first step in this project was to simulate the initial design given to us
+        with all surfaces being 10 cm thick. Each group memeber then split up design variables to explore. 
+        I looked into the impact of a nonstandard spar configuration, as well as the effect of changing 
+        the number and location of the ribs. I also explored some designs which included cut outs in 
+        the ribs and spars. We then looked at all of our results and recommend a design based on our 
+        exploration of these variables. Our initial baseline design had a mass of 
+        4840 kg and experienced a displacement of 0.683 m with a factor of safety of 
+        1.29. Our final design has a mass of 8050.4 kg, a displacement of 0.37156 m 
+        with a factor of safety of 1.81. We concluded that putting holes into the spars 
+        to minimize their role as major structural components was the best approach.
+
       </div>
     </div>
-
+    <!-- SECTION -->
     <div class="project-section">
-      <h3 style="font-size:27px;">System Design and Dynamics</h3>
+      <h3 style="font-size:27px;">Initial Baseline Design</h3>
       <p>
-        <div class="proj-text"> The gimbal features adjustable arms for fine-tuning the center of gravity (CG), as shown in the CAD model (Figure 1). Adjusting the arms enables simulations targeting specific dynamic effects. Notable behaviors include:
-        
-        <ul>
-          <li><b>Gimbal Lock:</b> Alignment of two axes restricting movement.</li>
-          <li><b>Base Acceleration Response:</b> How the system reacts to translational acceleration with varying initial conditions.</li>
-          <li><b>Gravitational Behavior:</b> The response of the gimbal when released at different angles under gravity.</li>
-       </ul> 
-      </div>
-      </p>
-    </div>
-
-    <div class="project-section">
-      <h3 style="font-size:27px;">Analytical Modeling</h3>
-      <p>
-        <div class="proj-text">To simplify the dynamics, the system's motors and camera were modeled as point masses, with the gimbal arms assumed to have negligible mass. Using three non-inertial reference frames (aligned with gimbal arms and the camera lens), dynamic analyses were performed using both the Euler-Lagrange and Differential-Algebraic Equation (DAE) methods.
-          Key steps included:
-        <ul>
-          <li>Deriving equations of motion using rotation matrices and potential/kinetic energy calculations.</li>
-          <li>Solving these equations numerically in MATLAB, employing Jacobian operators and the ode45 solver.</li>
-       </ul> 
-      </div>
-      </p>
-
+        <div class="proj-header-image">
+        <img src="project_photos\FEA_wing_design\initialdesign.jpg"
+        style="width:var(--proj-image-size);">
+        <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
+          <b>Figure 2:</b> Equivalent Stress of baseline design</div>
+        </div>
+        <div class="proj-header-image">
+            <img src="project_photos\FEA_wing_design\table1.jpg"
+            style="width:var(--proj-image-size);">
+            <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
+              <b>Table 1:</b> Parameters of Default Geometry</div>
+        </div>
+        <div class="proj-text"> The initial design failed to meet the success criteria 
+            defined. In order to determine 
+            whether our meshing was producing accurate results, we conducted a mesh convergence 
+            study in order to verify our results. We used automatic mesh refinement to dynamically 
+            adjust our mesh, our reasoning being that it could provide us more accurate results 
+            moving forward. As shown below, this generally increased mesh refinement at surface 
+            joints and the fixed end of the wing and along the length of the spars. These locations 
+            are extremely thin and have numerous sharp corners, which could lead to levels of stress 
+            in an extremely limited surface area.
+        </div>
       <div class="proj-row">
         <div class="proj-column-two">
-          <img src="project_photos\dynamics-diagram1.jpg"/>
+          <img src="project_photos\FEA_wing_design\conv1.jpg" style="width:70%;"/>
         </div>
         <div class="proj-column-two">
-          <img src="project_photos\dynamics-diagram2.jpg"/>
+          <img src="project_photos\FEA_wing_design\conv2.jpg" style="width:70%;"/>
         </div>
       </div>
       <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;">
-        <b>Figure 2 and 3:</b> A simplified gimbal with relevant lengths defined (left) and an FBD of the simplified model gimbal (right)
+        <b>Figure 3 and 4:</b> Refined Mesh Convergence of Deformation (left) and an FBD of the simplified model gimbal (right)
       </div>
-      <p><div class="proj-text">
-        The diagrams above show the three non inertial reference frames aligned with the gimbal arms and the camera lens, which I will be using during this analysis. It also defines the inertial reference frame, centered at the origin. The model may translate in the î direction, and the angles ⍴, ɸ, and Ѱ are free to change. The force F in the FBD will sometimes be present and when it is, the model may translate in the î direction. When F is not prescribed, the system will be fixed at the origin.
-      </div></p>
-      <div class="two-proj-header-images">
-        <div class="col1">
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="project-section">
-      <h3 style="font-size:27px;">Findings</h3>
-      <p>
-        <div class="proj-text">
-        <ul>
-          <li><b>Balanced vs. Unbalanced Systems:</b> When the CG aligns with the intersection of all axes (balanced), the camera experiences lower forces but higher vibrations. These vibrations, attributed to modeling approximations (e.g., motors and camera as point masses), suggest the need for improved modeling with moments of inertia.</li>
-          <li><b>Method Performance:</b> The Euler-Lagrange approach was computationally efficient but less flexible for prescribed changes, while the DAE method supported more complex conditions at the cost of higher computational time.</li>
-       </ul> 
+      <div class="proj-header-image">
+        <img src="project_photos\FEA_wing_design\refinedmesh.jpg"
+        style="width:var(--proj-image-size);">
+        <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
+          <b>Figure 5:</b> Refined Mesh</div>
       </div>
       </p>
     </div>
 
+    <!-- SECTION 2 -->
     <div class="project-section">
-      <h3 style="font-size:27px;"> Visualization and Conclusion</h3>
-      <p>
-        <div class="proj-header-image">
-          <img src="project_photos\dynamics-visualization.jpg"
+        <h3 style="font-size:27px;">Four Rib Design</h3>
+        <p>
+          <div class="proj-header-image">
+          <img src="project_photos\FEA_wing_design\design4.jpg"
           style="width:var(--proj-image-size);">
           <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
-            <b>Figure 4:</b> Animation at t=3.2s</div>
-        </div>
-        <div class="proj-text">Through this project, I learned the importance of incremental problem-solving combined with periodic validation. Breaking down complex systems and verifying results at each step could have streamlined debugging. Additionally, while approximations simplify initial modeling, they can introduce discrepancies, underscoring the need for rigorous validation through refined simulations and experimental testing.
-          The full report includes the math I preformed to make my simulations for both the DAE and Lagrange Methods.
-        </div>
-      </p>
-    </div>
+            <b>Figure 6:</b> Equivalent Stress of four rib design</div>
+          </div>
+          <div class="proj-header-image">
+              <img src="project_photos\FEA_wing_design\table2.jpg"
+              style="width:var(--proj-image-size);">
+              <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
+                <b>Table 2:</b> Parameters of four rib geometry</div>
+          </div>
+          <div class="proj-text"> For this model, I increased the number of ribs to four. 
+            This allowed us to 
+            isolate the impact of changing the number of ribs from the number in the 
+            default model. I ran OptiSlang in ANSYS to determine the optimal thicknesses for 
+            all of the surfaces that result in the lowest acceptable factor of safety and the 
+            highest acceptable value of deformation. This design iteration showed that 
+            increasing the number of ribs does not change the tip deflection significantly, 
+            and only ends up increasing the mass of the final design. By increasing the number 
+            of ribs, you might increase the number of locations where load is transferred to the 
+            spars in practice, which should lower the total bending moment on the spar, 
+            but in this model increasing the number ribs does not affect the load of the 
+            spar significantly, because the aerodynamic load is transferred to the spar by the skin 
+            itself. As a result of this analysis, I concluded that we should 
+            stick with the original number of ribs, or even decrease down to one rib.
+          </div>
+        </p>
+
+<!-- SECTION 3 -->
+<div class="project-section">
+    <h3 style="font-size:27px;">Shorter Aft Spar Design</h3>
+    <p>
+      <div class="proj-header-image">
+      <img src="project_photos\FEA_wing_design\design5.jpg"
+      style="width:var(--proj-image-size);">
+      <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
+        <b>Figure 7:</b> Equivalent Stress of short spar design</div>
+      </div>
+      <div class="proj-header-image">
+          <img src="project_photos\FEA_wing_design\table3.jpg"
+          style="width:var(--proj-image-size);">
+          <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
+            <b>Table 3:</b> Parameters of short spar geometry</div>
+      </div>
+      <div class="proj-text"> For this model, I decreased the length of the aft spar to 
+        about 7.5 meters long. I theorized that this would be an effective way to reduce 
+        weight since the highest stresses are located at the base of the wing. I then ran 
+        OptiSlang to determine the optimal thicknesses for all of the surfaces. The parameters 
+        for the lightest design which passed all of our success criteria are shown in table 3. Based on 
+        this simulation, I recommended that the final design includes some version of 
+        shortened spars as this is an effective way to reduce weight while meeting success 
+        criteria.
+      </div>
+    </p>
+</div>
 
     <!-- REPORT SECTION -->
     <h2 id="Resume">Report</h2>
       <div style="text-align:center; margin-top:10px;">
-        <a href="landerson-intermediate-dynamics-final-project.pdf" download>
+        <a href="MAE 4700 Project Report.pdf" download>
             <span class="tag-cloud" style= "margin-bottom: 10px">Download Report</span>
         </a>
       </div>
       <object class="pdf" 
-            data="landerson-intermediate-dynamics-final-project.pdf"
+            data="MAE 4700 Project Report.pdf"
             width="800"
             height="500">
     </object>
@@ -129,7 +187,13 @@
     
     
     <div class="footer">
-    <h2>Footer</h2>
+        <a href="https://www.linkedin.com/in/lola-anderson">
+          <i class="fa fa-linkedin fa-2x" style="color: #95AAB6; margin-right: 5%;"></i></a>
+        <a href="mailto:lra57@cornell.edu">
+          <i class="fa fa-envelope fa-2x" style="color: #95AAB6; margin-left: 5%;"></i></a></p>
+        <p style="color: #95AAB6;">
+          2025 &copy by Lola Anderson
+        </p>
     </div>
     
     <script>
