@@ -1,365 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
-<title>Lola Portfolio Website</title>
-<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-
-* {box-sizing: border-box;}
-
-:root {
-    --text-color: white;
-    --background-color: #304870;
-    --navbar-a-color: white;
-    --navbar-background-color:  #304870;
-    --tag-cloud-background-color: #fff;
-    --tag-cloud-text-color: #212121;
-    --down-arrow: url("icons_and_such\icons8-chevron-down-white.png");
-    --grad1: #1b283e24;
-    --grad2: #20304d1e;
-}
-
-.light-mode {
-    --text-color: #304870;
-    --background-color: white;
-    --navbar-a-color: #304870;
-    --navbar-background-color: white;
-    --tag-cloud-background-color: #304870;
-    --tag-cloud-text-color: white;
-    --down-arrow: url("icons_and_such\icons8-chevron-down-black.png");
-    --grad1: #ffffff00;
-    --grad2: #ffffff00;
-}
-
-::-moz-selection { /* Code for Firefox */
-  color: #304870;
-  background: #D4E9FF;
-}
-
-::selection {
-  color: #304870;
-  background: #D4E9FF;
-}
-
-html {scroll-behavior: smooth;}
-
-
-body {
-  font-family: 'Abel'; font-size: 22px;
-  margin: 0;
-  padding-top: 40px;
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
-
-body section {
-    height: 100%;
-    width:100%;
-}
-
-/* Increase the font size of the h1 element */
-h1 {font-size: 40px; padding: 20px 50px 20px 50px;} 
-
-h2 {padding: 10px 50px 0px 50px; text-align: center;} 
-
-
-/* Style the top navigation bar */
-.navbar {
-  overflow: hidden;
-  position: fixed; /* Set the navbar to fixed position */
-  top:0; left: 0; width: 100%;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--navbar-background-color);
-}
-
-/* Style the navigation bar links */
-.navbar a {
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-  color: var(--navbar-a-color);
-}
-
-/* Right-aligned link */
-.navbar .links {
-  position: absolute;
-  right: 0;
-  padding-right: 20px;
-}
-
-/* Left-aligned link */
-.navbar .left {
-  position: absolute;
-  left: 0;
-  padding-left: 20px;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #D4E9FF;
-  color: black;
-}
-
-.main {
-  padding: 0px 50px;
-  width: 100%;
-  margin-top: 100px; /* To account for the fixed navbar */
-}
-
-/* Column container */
-.row {
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 20px;  /* Add spacing between columns */
-  justify-content: center; /* Center columns on small screens */
-}
-
-/* ABOUT ME STYLE */
-.maincol {   
-  padding: 50% 150px 70px 150px;
-  background-image: linear-gradient(var(--grad1), var(--grad2)), url("Project_photos/ArtemicsFying.png");
-  background-size: 55%; /* Make the background image smaller */
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-top: 50%;
-  margin-bottom: 80px;
-}
-
-/* SKILLS STYLE */
-.tag-cloud {
-  display: inline-block;
-  color: var(--tag-cloud-text-color);
-  padding: 0px 20px 0px;
-  border-radius: 25px;
-  background-color: var(--tag-cloud-background-color);
-  margin-top: 8px;
-  margin-bottom: 8px;
-  text-align: center;
-  align-items: center;
-  justify-items: center;
-}
-
-/* Create two equal columns that sit next to each other */
-.portfolio_col {
-  flex: 30%;
-  text-align: center;
-  padding: 10px 20px 10px 20px;
-}
-
-/* FADE IN */
-.container {position: relative; width: 100%; padding-bottom: 20px;}
-
-.image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.container:hover .image {opacity: 0.3;}
-
-.container:hover .middle {opacity: .8;}
-
-.text {
-  background-color: #304870;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
-}
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-    padding: 20px; /* Add padding for better spacing on small screens */
-  }
-  .portfolio_col {
-    flex: 100%; /* Make each column take full width */
-  }
-  .maincol {
-    padding: 100px 50px 70px 50px; /* Adjust padding for smaller screens */
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
-
-</style>
+    <meta charset="UTF-8" />
+    <title>Lola Anderson</title>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <section class="section">
-   <!-- STICKY NAV BAR SECTION -->
-  <div class="navbar" id="nav">
-    <div class="left">
-      <img src="icons_and_such/icons8-light-mode-78.png" 
-      alt="Toggle" class="toggle-button" onclick="toggleLightMode()" 
-      id="toggle" style="width: 45px;">
+    <!-- STICKY NAV BAR SECTION -->
+    <div class="topnav" id="myTopnav">
+        <a href="index.htm" id="home-nav">Home</a>
+        <a href="#Projects" id="projects-nav">Projects</a>
+        <a href="#Skills" id="skills-nav">Skills</a>
+        <a href="#Resume" id="resume-nav">Resume</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <div class="left">
+          <img id="toggle"
+          src="icons_and_such/icons8-light-mode-78.png" 
+          alt="Toggle" class="toggle-button"
+          onclick="toggleLightMode()" style="width: 45px;">
+        </div>
+        <div class="center">Lola Anderson</div>
     </div>
-    <a href="#" style="font-size:30px; font-weight:bold;">Lola Anderson</a>
-    <div class="links" id="nav-a">
-      <a href="websitev3.htm" id="nav-a">Home</a>
-      <a href="#Projects">Projects</a>
-      <a href="#Skills">Skills</a>
-      <a href="#Resume">Resume</a>
+
+    <div class="project-section">
+      <h1>Dynamic Simulations of 2.5 Axis Gimbal</h1>
+      <div class="proj-header-image">
+        <img src="project_photos/camtracker.jpg"
+        style="width:var(--proj-image-size);">
+        <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
+          <b>Figure 1:</b> CAD Model of 2.5 Axis Camera Gimbal</div>
+      </div>
+      <div class="proj-text"> This project focuses on the dynamics of a 2.5-axis camera gimbal designed for automatic overhead tracking of planes when powered on. For this project, I explored the gimbal behavior as a free-moving system constrained by its axes when powered off. The gimbal must remain stable under various conditions, including when its base is held by a human and subjected to movement. The project explores dynamic phenomena such as gimbal lock, reactions to translational acceleration, and behavior under gravitational forces after being released from different angles. The purpose of this project was to determine the behavior of the gimbal which I had previously designed for my project team, CU Air.
+      </div>
     </div>
-  </div>
 
-  <!-- ABOUT ME SECTION -->
-  <div class="maincol">
-    <p style="font-size:30px; font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(71, 82, 136, 0.8);" id="abt">
-      I am a student in my Senior year at Cornell University, 
-      starting my career in Mechanical Engineering. Past internships 
-      include Caterpillar, where I got to help extend diesel engine 
-      lifecycles, and SpaceX where designed many parts for Falcon 9 
-      Payload Integration. While at Cornell, I am a member of CUAir, 
-      a project team where I was a member of Integration and Testing 
-      Operations subteam. I hope you enjoy checking out some of the projects 
-      I have worked on and some of my other interests!
-    </p>
-  </div>
-
-  <!-- SKILLS SECTION -->
-  <div class="main" id="content">
-    <h2 id="Skills">SKILLS</h2>
-    <p style="text-align: center;">
-      <span class="tag-cloud">NX</span>
-      <span class="tag-cloud">Solidworks</span>
-      <span class="tag-cloud">ANSYS</span>
-      <span class="tag-cloud">NASTRAN</span>
-      <span class="tag-cloud">Matlab</span>
-      <span class="tag-cloud">Python</span></p>
-
-    <!-- NEXT BUTTON -->
-    <a href="#Projects">
-      <p style="text-align: center;">
-          <img src="icons_and_such\icons8-chevron-down-white.png" alt="Resume" size=25px id="next">
+    <div class="project-section">
+      <h3 style="font-size:27px;">System Design and Dynamics</h3>
+      <p>
+        <div class="proj-text"> The gimbal features adjustable arms for fine-tuning the center of gravity (CG), as shown in the CAD model (Figure 1). Adjusting the arms enables simulations targeting specific dynamic effects. Notable behaviors include:
+        
+        <ul>
+          <li><b>Gimbal Lock:</b> Alignment of two axes restricting movement.</li>
+          <li><b>Base Acceleration Response:</b> How the system reacts to translational acceleration with varying initial conditions.</li>
+          <li><b>Gravitational Behavior:</b> The response of the gimbal when released at different angles under gravity.</li>
+       </ul> 
+      </div>
       </p>
-    </a>
-  </div>
-</section>
+    </div>
 
-  <!-- PROJECTS SECTION -->
-  <div class="main" id="Projects">
-    <h2>PROJECTS</h2>
-    <hr class="w3-opacity"/>
-
-    <!-- COLUMN 1 -->
-    <div class="row">
-      <div class="portfolio_col">
-        <a href="gimbal.htm">
-          <div class="container">
-            <img src="Project_photos\camtracker.jpg" alt="Avatar" class="image">
-            <div class="middle">
-              <div class="text">2.5 Axis Gimbal</div>
-            </div>
-          </div>
-        </a>
-        
-        <a href="gimbal.htm">
-          <div class="container">
-            <img src="Project_photos\IDGIMBALMODEL.jpg" alt="Avatar" class="image">
-            <div class="middle">
-              <div class="text">Dynamic Simulation of Free Gimbal</div>
-            </div>
-          </div>
-        </a>
+    <div class="project-section">
+      <h3 style="font-size:27px;">Analytical Modeling</h3>
+      <p>
+        <div class="proj-text">To simplify the dynamics, the system's motors and camera were modeled as point masses, with the gimbal arms assumed to have negligible mass. Using three non-inertial reference frames (aligned with gimbal arms and the camera lens), dynamic analyses were performed using both the Euler-Lagrange and Differential-Algebraic Equation (DAE) methods.
+          Key steps included:
+        <ul>
+          <li>Deriving equations of motion using rotation matrices and potential/kinetic energy calculations.</li>
+          <li>Solving these equations numerically in MATLAB, employing Jacobian operators and the ode45 solver.</li>
+       </ul> 
       </div>
+      </p>
 
-      <!-- COLUMN 2 -->
-      <div class="portfolio_col">
-        <a href="https://www.w3schools.com">
-          <div class="container">
-            <img src="Project_photos\FEAWINGDES.jpg" alt="Avatar" class="image">
-            <div class="middle">
-              <div class="text">Design and Finite Element Analysis of Airplane Wing using Optislang</div>
-            </div>
-          </div>
-        </a>
-        
-        <a href="https://www.w3schools.com">
-          <div class="container">
-            <img src="Project_photos\fusemold2.png" alt="Avatar" class="image">
-            <div class="middle">
-              <div class="text">Design and Manufacturing of VTOL Aircraft Carbon Fiber Fuselage Mold</div>
-            </div>
-          </div>
-        </a>
+      <div class="proj-row">
+        <div class="proj-column-two">
+          <img src="project_photos\dynamics-diagram1.jpg"/>
+        </div>
+        <div class="proj-column-two">
+          <img src="project_photos\dynamics-diagram2.jpg"/>
+        </div>
       </div>
-
-      <!-- COLUMN 3 -->
-      <div class="portfolio_col">
-        <a href="https://www.w3schools.com">
-          <div class="container">
-            <img src="Project_photos\ebay2.jpg" alt="Avatar" class="image">
-            <div class="middle">
-              <div class="text">Custom VTOL Aircraft Electrical Bay</div>
-            </div>
-          </div>
-        </a>
+      <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;">
+        <b>Figure 2 and 3:</b> A simplified gimbal with relevant lengths defined (left) and an FBD of the simplified model gimbal (right)
+      </div>
+      <p><div class="proj-text">
+        The diagrams above show the three non inertial reference frames aligned with the gimbal arms and the camera lens, which I will be using during this analysis. It also defines the inertial reference frame, centered at the origin. The model may translate in the î direction, and the angles ⍴, ɸ, and Ѱ are free to change. The force F in the FBD will sometimes be present and when it is, the model may translate in the î direction. When F is not prescribed, the system will be fixed at the origin.
+      </div></p>
+      <div class="two-proj-header-images">
+        <div class="col1">
+          
+        </div>
       </div>
     </div>
 
-    <!-- RESUME SECTION -->
-    <h2 id="Resume">RESUME</h2>
-    <div style="text-align:center; margin-top:10px;">
-      <a href="Lola_Anderson_Resume_August_2024.pdf" download>
-          <span class="tag-cloud" style= "margin-bottom: 10px">Download Resume</span>
-      </a>
+    <div class="project-section">
+      <h3 style="font-size:27px;">Findings</h3>
+      <p>
+        <div class="proj-text">
+        <ul>
+          <li><b>Balanced vs. Unbalanced Systems:</b> When the CG aligns with the intersection of all axes (balanced), the camera experiences lower forces but higher vibrations. These vibrations, attributed to modeling approximations (e.g., motors and camera as point masses), suggest the need for improved modeling with moments of inertia.</li>
+          <li><b>Method Performance:</b> The Euler-Lagrange approach was computationally efficient but less flexible for prescribed changes, while the DAE method supported more complex conditions at the cost of higher computational time.</li>
+       </ul> 
+      </div>
+      </p>
     </div>
-    <p style="text-align: center;">
-      <img src="resume.jpg" alt="Resume" width=50%>
-    </p>
-  </div>
 
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+    <div class="project-section">
+      <h3 style="font-size:27px;"> Visualization and Conclusion</h3>
+      <p>
+        <div class="proj-header-image">
+          <img src="project_photos\dynamics-visualization.jpg"
+          style="width:var(--proj-image-size);">
+          <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
+            <b>Figure 4:</b> Animation at t=3.2s</div>
+        </div>
+        <div class="proj-text">Through this project, I learned the importance of incremental problem-solving combined with periodic validation. Breaking down complex systems and verifying results at each step could have streamlined debugging. Additionally, while approximations simplify initial modeling, they can introduce discrepancies, underscoring the need for rigorous validation through refined simulations and experimental testing.
+          The full report includes the math I preformed to make my simulations for both the DAE and Lagrange Methods.
+        </div>
+      </p>
+    </div>
 
-<script>
-    function toggleLightMode() {
-      var body = document.body;
-      var next = document.getElementById("next")
-      var tog = document.getElementById("toggle")
-      var abt = document.getElementById("abt")
-      if (body.classList.contains('light-mode')) 
-      { 
-        body.classList.remove('light-mode');
-        next.src="icons_and_such/icons8-chevron-down-white.png";
-        tog.src="icons_and_such/icons8-light-mode-78.png";
-        tog.style="width: 45px;";
-        abt.style="font-size:30px; font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(71, 82, 136, .3);";
-
-      } else {
-        body.classList.add('light-mode');
-        next.src="icons_and_such/icons8-chevron-down-black.png";
-        tog.src="icons_and_such/icons8-dark-mode-50.png";
-        tog.style="width: 35px;";
-        abt.style="font-size:30px; font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);";
-      };
-    }
-</script>
-
+    <!-- REPORT SECTION -->
+    <h2 id="Resume">Report</h2>
+      <div style="text-align:center; margin-top:10px;">
+        <a href="landerson-intermediate-dynamics-final-project.pdf" download>
+            <span class="tag-cloud" style= "margin-bottom: 10px">Download Report</span>
+        </a>
+      </div>
+      <object class="pdf" 
+            data="landerson-intermediate-dynamics-final-project.pdf"
+            width="800"
+            height="500">
+    </object>
+    </div>
+    
+    
+    <div class="footer">
+    <h2>Footer</h2>
+    </div>
+    
+    <script>
+        function toggleLightMode() {
+          var body = document.body;
+          var next = document.getElementById("next")
+          var tog = document.getElementById("toggle")
+          var abt = document.getElementById("abt")
+          if (body.classList.contains('light-mode')) 
+          { 
+            body.classList.remove('light-mode');
+            next.src="icons_and_such/icons8-chevron-down-white.png";
+            tog.src="icons_and_such/icons8-light-mode-78.png";
+            tog.style="width: 45px;";
+            abt.style="font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(71, 82, 136, 0.8);";
+    
+          } else {
+            body.classList.add('light-mode');
+            next.src="icons_and_such/icons8-chevron-down-black.png";
+            tog.src="icons_and_such/icons8-dark-mode-50.png";
+            tog.style="width: 35px;";
+            abt.style="font-weight: bold; text-align: center; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);";
+          };
+        }
+        function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>    
 </body>
 </html>
