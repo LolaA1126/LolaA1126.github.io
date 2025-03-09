@@ -328,6 +328,7 @@ h2 {
 .portfolio_col {
   flex: 30%;
   text-align: center;
+  justify-content: center;
   padding: 0px 10px 0px 10px;
   margin: 0 auto;
 }
