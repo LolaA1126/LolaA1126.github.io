@@ -126,6 +126,8 @@ body {
   padding-bottom:6vh;
   max-width:100%;
   margin:0 auto;
+  left: 50%;
+  transform: translate(-50%, -57.5%);
 }
 .col1 {
   flex: 50%;
