@@ -28,93 +28,133 @@
     </div>
 
     <div class="project-section">
-      <h1>Dynamic Simulations of 2.5 Axis Gimbal</h1>
+      <h1>Custom VTOL Aircraft Electrical Bay</h1>
       <div class="proj-header-image">
-        <img src="project_photos/camtracker.jpg"
+        <img src="project_photos\ebay\DSC05755.JPG"
         style="width:var(--proj-image-size);">
         <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
-          <b>Figure 1:</b> CAD Model of 2.5 Axis Camera Gimbal</div>
+          <b>Figure 1:</b> Final installed electrical bay in use in the feild</div>
       </div>
-      <div class="proj-text"> This project focuses on the dynamics of a 2.5-axis camera gimbal designed for automatic overhead tracking of planes when powered on. For this project, I explored the gimbal behavior as a free-moving system constrained by its axes when powered off. The gimbal must remain stable under various conditions, including when its base is held by a human and subjected to movement. The project explores dynamic phenomena such as gimbal lock, reactions to translational acceleration, and behavior under gravitational forces after being released from different angles. The purpose of this project was to determine the behavior of the gimbal which I had previously designed for my project team, CU Air.
-      </div>
+      <div class="proj-text"> CU Air's Artemis Electrical Bay (ebay) serves the purpose 
+        of keeping batteries and electronics secure during flight. <br><br>
+
+        This project gave me experience with designing at the interface of multiple 
+        subteams. It presented the unique challenge of tailoring my design to the varying 
+        needs of multiple different groups within CU Air. The electrical subteam needed the 
+        components to be easily accessible. The autopilot subteam needed certain components 
+        such as the Pixhawk to be placed far from batteries to prevent interference. The 
+        mechanical teams needed the ebay to be lightweight and easy to work with when 
+        replacing batteries. As I worked through these problems I also adapted to the rapidly 
+        changing needs of the team, resulting in multple iterations shown below.</div>
     </div>
 
     <div class="project-section">
-      <h3 style="font-size:27px;">System Design and Dynamics</h3>
+      <h3 style="font-size:27px;">Final CAD Renders</h3>
       <p>
-        <div class="proj-text"> The gimbal features adjustable arms for fine-tuning the center of gravity (CG), as shown in the CAD model (Figure 1). Adjusting the arms enables simulations targeting specific dynamic effects. Notable behaviors include:
-        
+        <div class="proj-row">
+          <div class="proj-column-two">
+            <img src="project_photos\ebay\finalcad1.jpg"/>
+          </div>
+          <div class="proj-column-two">
+            <img src="project_photos\ebay\finalcad2.jpg"/>
+          </div>
+        </div>
+        <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;">
+          <b>Figure 2 and 3:</b> A CAD model of the electrical bay with no boards or betteries (left) and with boards (right)
+        </div>
+    </div>
+    
+
+    <div class="project-section">
+      <h3 style="font-size:27px;">System Contents</h3>
+      <p>
+        <div class="proj-text" style="text-align: center;"> The ebay held the following components:
+          <div class="proj-row" style="text-align: left;">
+            <div class="proj-column-two"><ul>
+              <li>6x Flight Batteries (Tattu 6S 8000mAh) </li>
+              <li>Flight Electronics Battery</li>
+              <li>Pixhawk</li>
+              <li>Rocket</li>
+              <li>Raspberry Pi</li>
+              <li>Flight Validation Board</li>
+              <li>Gimbal Board</li>
+              <li>Power Monitoring System</li></ul> 
+            </div>
+            <div class="proj-column-two"><ul>
+              <li>R10C Current Sensing Board</li>
+              <li>Pixhawk Breakout Board</li>
+              <li>Power Distribution Board</li>
+              <li>Airdrop Board</li>
+              <li>Video Capture Board</li>
+              <li>General Development Board/Debug Board (for detecting issues before flight)</li>
+              </ul> 
+            </div>
+          </div>
+      </div>
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h3 style="font-size:27px;">System Requirements</h3>
+      <p>
+        <div class="proj-text">Fuctional Requirements:
         <ul>
-          <li><b>Gimbal Lock:</b> Alignment of two axes restricting movement.</li>
-          <li><b>Base Acceleration Response:</b> How the system reacts to translational acceleration with varying initial conditions.</li>
-          <li><b>Gravitational Behavior:</b> The response of the gimbal when released at different angles under gravity.</li>
+          <li>FR-1: Must securely hold 6x 6S 8000 mAh batteries and 1x small batteries.</li>
+          <li>FR-2:  Must securely hold all 10 boards.</li>
+          <li>FR-3: Must provide adequate distance or insulation between the Pixhawk and batteries.</li>
+          <li>FR-4: Must provide consistently level mounting for the Pixhawk.</li>
+          <li>FR-5: Must separate necessary components to prevent battery interference.</li>
+          <li>FR-6: Must provide adequate ventilation.</li>
+          <li>FR-7: Must constrain the bulkhead vertically.</li>
+       </ul> 
+       Nonfuctional Requirements:
+        <ul>
+          <li>NFR-1: The Ebay shall be designed so that one person can exchange the batteries within 5 minutes (including plugging in and unplugging power wires)</li>
+          <li>NFR-2: The V4 Ebay mass shall not exceed V3 Mass.</li>
+          <li>NFR-3: The Ebay shall allow easy visibility for all electronic components so that members can validate their systems before flight.</li>
+          <li>NFR-4: The Ebay shall remain functional even in the case of a unexpected drop or a 360 degree roll.</li>
        </ul> 
       </div>
       </p>
+
+      <div class="project-section">
+        <h3 style="font-size:27px;">Board Placement and Wire Management</h3>
+        <p>
+          <div class="proj-text">
+            <div class="proj-row">
+              <div class="proj-column-two">
+                <img src="project_photos\ebay\boards1.jpg"/>
+              </div>
+              <div class="proj-column-two">
+                <img src="project_photos\ebay\boards2.jpg"/>
+              </div>
+            </div>
+            <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;">
+              <b>Figure 4 and 5:</b> Annotated diagrams of Board Placements.
+            </div>
+            <div class="proj-header-image">
+              <img src="project_photos\ebay\wirepaths.jpg"
+              style="width:var(--proj-image-size);">
+              <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
+                <b>Figure 6:</b> Diagram of wire paths.</div>
+            </div> 
+            In the final design, the boards are mostly secured with screws to the wooden 
+            peice with the exception of the rocket. The wires to the rocket are too 
+            stiff to move freely, so the rocket is velcroed to the top of the fuselage. <br><br>
+            
+            The wires were diffiuclt to organize in such a small space, but the most important 
+            aspect for wire management was keeping the wires out of the batery section and 
+            out of the way of the airdrop and baydoors. This was accomplished by the wall 
+            towards the back of the fuselage. Power Wires were secured with velcro loops and 
+            zip ties if they had to cross into the airdrop area.
+        </div>
+        </p>
+      </div>
     </div>
 
-    <div class="project-section">
-      <h3 style="font-size:27px;">Analytical Modeling</h3>
-      <p>
-        <div class="proj-text">To simplify the dynamics, the system's motors and camera were modeled as point masses, with the gimbal arms assumed to have negligible mass. Using three non-inertial reference frames (aligned with gimbal arms and the camera lens), dynamic analyses were performed using both the Euler-Lagrange and Differential-Algebraic Equation (DAE) methods.
-          Key steps included:
-        <ul>
-          <li>Deriving equations of motion using rotation matrices and potential/kinetic energy calculations.</li>
-          <li>Solving these equations numerically in MATLAB, employing Jacobian operators and the ode45 solver.</li>
-       </ul> 
-      </div>
-      </p>
 
-      <div class="proj-row">
-        <div class="proj-column-two">
-          <img src="project_photos\dynamics-diagram1.jpg"/>
-        </div>
-        <div class="proj-column-two">
-          <img src="project_photos\dynamics-diagram2.jpg"/>
-        </div>
-      </div>
-      <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;">
-        <b>Figure 2 and 3:</b> A simplified gimbal with relevant lengths defined (left) and an FBD of the simplified model gimbal (right)
-      </div>
-      <p><div class="proj-text">
-        The diagrams above show the three non inertial reference frames aligned with the gimbal arms and the camera lens, which I will be using during this analysis. It also defines the inertial reference frame, centered at the origin. The model may translate in the î direction, and the angles ⍴, ɸ, and Ѱ are free to change. The force F in the FBD will sometimes be present and when it is, the model may translate in the î direction. When F is not prescribed, the system will be fixed at the origin.
-      </div></p>
-      <div class="two-proj-header-images">
-        <div class="col1">
-          
-        </div>
-      </div>
-    </div>
-
-    <div class="project-section">
-      <h3 style="font-size:27px;">Findings</h3>
-      <p>
-        <div class="proj-text">
-        <ul>
-          <li><b>Balanced vs. Unbalanced Systems:</b> When the CG aligns with the intersection of all axes (balanced), the camera experiences lower forces but higher vibrations. These vibrations, attributed to modeling approximations (e.g., motors and camera as point masses), suggest the need for improved modeling with moments of inertia.</li>
-          <li><b>Method Performance:</b> The Euler-Lagrange approach was computationally efficient but less flexible for prescribed changes, while the DAE method supported more complex conditions at the cost of higher computational time.</li>
-       </ul> 
-      </div>
-      </p>
-    </div>
-
-    <div class="project-section">
-      <h3 style="font-size:27px;"> Visualization and Conclusion</h3>
-      <p>
-        <div class="proj-header-image">
-          <img src="project_photos\dynamics-visualization.jpg"
-          style="width:var(--proj-image-size);">
-          <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
-            <b>Figure 4:</b> Animation at t=3.2s</div>
-        </div>
-        <div class="proj-text">Through this project, I learned the importance of incremental problem-solving combined with periodic validation. Breaking down complex systems and verifying results at each step could have streamlined debugging. Additionally, while approximations simplify initial modeling, they can introduce discrepancies, underscoring the need for rigorous validation through refined simulations and experimental testing.
-          The full report includes the math I preformed to make my simulations for both the DAE and Lagrange Methods.
-        </div>
-      </p>
-    </div>
-
-    <!-- REPORT SECTION -->
-    <h2 id="Resume">Report</h2>
+    <!-- REPORT SECTION
+    <h2 id="Resume">Design Reviews</h2>
       <div style="text-align:center; margin-top:10px;">
         <a href="landerson-intermediate-dynamics-final-project.pdf" download>
             <span class="tag-cloud" style= "margin-bottom: 10px">Download Report</span>
@@ -125,7 +165,7 @@
             width="800"
             height="500">
     </object>
-    </div>
+    </div>-->
     
     
     <div class="footer">
