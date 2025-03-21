@@ -95,64 +95,57 @@
         blades 
       </div>
       </p>
-    </div>
-
-    <div class="project-section">
-      <h3 style="font-size:27px;">Analytical Modeling</h3>
-      <p>
-        <div class="proj-text">To simplify the dynamics, the system's motors and camera were modeled as point masses, with the gimbal arms assumed to have negligible mass. Using three non-inertial reference frames (aligned with gimbal arms and the camera lens), dynamic analyses were performed using both the Euler-Lagrange and Differential-Algebraic Equation (DAE) methods.
-          Key steps included:
-        <ul>
-          <li>Deriving equations of motion using rotation matrices and potential/kinetic energy calculations.</li>
-          <li>Solving these equations numerically in MATLAB, employing Jacobian operators and the ode45 solver.</li>
-       </ul> 
-      </div>
-      </p>
-
       <div class="proj-row">
         <div class="proj-column-two">
-          <img src="project_photos\dynamics-diagram1.jpg"/>
+          <img src="project_photos\Blade_design_project\blade_geom_pitch.jpg"/>
         </div>
         <div class="proj-column-two">
-          <img src="project_photos\dynamics-diagram2.jpg"/>
+          <img src="project_photos\Blade_design_project\blade_geom_chord.jpg"/>
         </div>
       </div>
       <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;">
-        <b>Figure 2 and 3:</b> A simplified gimbal with relevant lengths defined (left) and an FBD of the simplified model gimbal (right)
-      </div>
-      <p><div class="proj-text">
-        The diagrams above show the three non inertial reference frames aligned with the gimbal arms and the camera lens, which I will be using during this analysis. It also defines the inertial reference frame, centered at the origin. The model may translate in the î direction, and the angles ⍴, ɸ, and Ѱ are free to change. The force F in the FBD will sometimes be present and when it is, the model may translate in the î direction. When F is not prescribed, the system will be fixed at the origin.
-      </div></p>
-      <div class="two-proj-header-images">
-        <div class="col1">
-          
-        </div>
+        <b>Figure 3 and 4:</b> Pitch Angle (left) and Chord (right) as a function of turbine radius for our initial and 
+        final geometry iterations.        
       </div>
     </div>
 
     <div class="project-section">
-      <h3 style="font-size:27px;">Findings</h3>
+      <h3 style="font-size:27px;">Ansys Results</h3>
       <p>
-        <div class="proj-text">
-        <ul>
-          <li><b>Balanced vs. Unbalanced Systems:</b> When the CG aligns with the intersection of all axes (balanced), the camera experiences lower forces but higher vibrations. These vibrations, attributed to modeling approximations (e.g., motors and camera as point masses), suggest the need for improved modeling with moments of inertia.</li>
-          <li><b>Method Performance:</b> The Euler-Lagrange approach was computationally efficient but less flexible for prescribed changes, while the DAE method supported more complex conditions at the cost of higher computational time.</li>
-       </ul> 
-      </div>
+        <div class="proj-row">
+          <div class="proj-column-two">
+            <img src="project_photos\Blade_design_project\deflection_ansys.jpg"/>
+          </div>
+          <div class="proj-column-two">
+            <img src="project_photos\Blade_design_project\stress_ansys.jpg"/>
+          </div>
+        </div>
+        <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;">
+          <b>Figure 5 and 6:</b> Deflection (left) and stress (right) of turbine blade under aerodynamic loads.        
+        </div>
+        <div class="proj-text">Our design met requirements for deflection and stress when we increased our chord 
+          throughout the blade length. This increase the moment of inertia of the blade cross section by impacting 
+          airfoil thickness.
+        </div>
       </p>
     </div>
 
     <div class="project-section">
-      <h3 style="font-size:27px;"> Visualization and Conclusion</h3>
+      <h3 style="font-size:27px;">Wind Turbine Data</h3>
       <p>
         <div class="proj-header-image">
-          <img src="project_photos\dynamics-visualization.jpg"
+          <img src="project_photos\Blade_design_project\wind_turbine_data.jpg"
           style="width:var(--proj-image-size);">
           <div class="proj-text" style="text-align: center; margin: 2px auto 10px auto;" >
-            <b>Figure 4:</b> Animation at t=3.2s</div>
+            <b>Figure 7:</b> Rotational Rate (RPM) vs. Coefficient of Power for Wind Velocity from Wind Tunnel Calibration
+            Curve</div>
         </div>
-        <div class="proj-text">Through this project, I learned the importance of incremental problem-solving combined with periodic validation. Breaking down complex systems and verifying results at each step could have streamlined debugging. Additionally, while approximations simplify initial modeling, they can introduce discrepancies, underscoring the need for rigorous validation through refined simulations and experimental testing.
-          The full report includes the math I preformed to make my simulations for both the DAE and Lagrange Methods.
+        <div class="proj-text">This figure shows that the highest power coefficient of .476 is found at 1400 RPM at 7.4 m/s. 
+          This is the highest wind speed we tested our design at due to time constaints and this suggests that our optimal 
+          wind speed for our design is at or above 7.4 m/s. This contrasted our expectation, because we designed our blade 
+          to operate in 5.4 m/s winds. This discreancy could be due to assumptions we made about the type of flow we are 
+          working with. We slightly adjusted our calculations in order to account for non ideal effects such as the rotational 
+          velocity of the wake, but the impact of these effects seem to be higher than we accounted for.
         </div>
       </p>
     </div>
@@ -160,12 +153,12 @@
     <!-- REPORT SECTION -->
     <h2 id="Resume">Report</h2>
       <div style="text-align:center; margin-top:10px;">
-        <a href="landerson-intermediate-dynamics-final-project.pdf" download>
+        <a href="project_photos\Blade_design_project\MAE 4272 - Wind Turbine Final Report.pdf" download>
             <span class="tag-cloud" style= "margin-bottom: 10px">Download Report</span>
         </a>
       </div>
       <object class="pdf" 
-            data="landerson-intermediate-dynamics-final-project.pdf"
+            data="project_photos\Blade_design_project\MAE 4272 - Wind Turbine Final Report.pdf"
             width="800"
             height="500">
     </object>
